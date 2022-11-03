@@ -2,9 +2,11 @@ require("dotenv").config({path : __dirname+"/config/.env"});
 const express = require("express");
 const connectDB = require('./config/db');
 const colors = require('colors');
+const cors = require("cors");
 
 
 const app = express();
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json())
 
